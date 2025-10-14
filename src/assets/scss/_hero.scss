@@ -1,0 +1,55 @@
+@use "variables" as *;
+
+#hero {
+width: 1500px;
+height: 850px;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+background-image: url('/assets/images/banner.jpg');
+background-size: cover;
+background-position: center;
+color: $dark-text;
+font-family: $font2;
+}
+
+#hero div h1{
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+#hero div p{
+    font-size: 40px;
+}
+
+
+.custom-btn {
+  background-color: #f39c12 !important;
+  border: none !important;
+  color: #fff !important;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s;
+
+  &:hover {
+    background-color: #ffb142 !important;
+    transform: scale(1.05);
+  }
+}
+
+
+
+/* responsive */
+@media (max-width: 480px) {
+  .btn-products {
+    padding: 0.5rem 0.9rem;
+    font-size: 0.95rem;
+  }
+}
+// ...existing code...
+
+

@@ -1,0 +1,13 @@
+// Import variabile și mixins
+@use "variables" as *;
+
+// Import secțiuni
+@use "header";
+@use "hero";
+@use "products";
+@use "about";
+@use "footer";
+
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+
+
