@@ -13,6 +13,7 @@ const footer = ejs.render(fs.readFileSync("./src/assets/templates/footer.html", 
 const contact = ejs.render(fs.readFileSync("./src/assets/templates/contact.html", "utf8"));
 const products = ejs.render(fs.readFileSync("./src/assets/templates/products.html", "utf8"));
 const about = ejs.render(fs.readFileSync("./src/assets/templates/about.html", "utf8"));
+const tech = ejs.render(fs.readFileSync("./src/assets/templates/tech.html", "utf8"));
 
 export default defineConfig({
     plugins: [
@@ -28,7 +29,8 @@ export default defineConfig({
                     header: header,
                     footer: footer,
                     products: products,
-                    about: about
+                    about: about,
+                    tech: tech
                 },
                 tags: [
                     {

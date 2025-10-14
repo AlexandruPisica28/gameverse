@@ -8,30 +8,6 @@ nav img .logo {
   float: left;
 }
 
-// .custom-navbar {
-//   background-color: #0a0a0a !important;
-//   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-//   padding: 0.8rem 0;
-// }
-
-// .custom-navbar .navbar-brand {
-//   font-weight: 700;
-//   color: #f39c12 !important;
-// }
-
-// .custom-navbar .nav-link {
-//   color: #fff !important;
-//   transition: color 0.3s ease;
-
-//   &:hover {
-//     color: #f39c12 !important;
-//   }
-// }
-
-// .custom-links {
-//     margin-right: 20px;
-
-// }
 
 .custom-navbar {
   background: $secondary !important;
@@ -95,6 +71,53 @@ nav img .logo {
 }
 
 /* Links */
+// .custom-navbar .custom-links .nav-link {
+//   color: $text !important;
+//   font-size: 0.9rem;
+//   text-transform: uppercase;
+//   margin-left: 30px;
+//   margin-right: 50px;
+//   position: relative;
+//   transition: color 0.3s ease;
+
+//   &:hover {
+//     color: $primary !important;
+//   }
+
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     height: 3px;
+//     width: 0;
+//     background-color: $primary;
+//     transition: width 0.3s ease-in-out;
+//   }
+
+//   &:hover::before {
+//     width: 100%;
+//   }
+// }
+
+// /* Theme Button */
+// .custom-navbar #themeToggle {
+//   margin-left: 1.5rem;
+//   border-color: $primary;
+//   color: $primary;
+//   font-weight: 700;
+//   transition: all 0.3s ease;
+
+//   &:hover {
+//     background-color: $primary;
+//     color: $dark-text;
+//   }
+// }
+
+
+
+
+/* Navbar links */
 .custom-navbar .custom-links .nav-link {
   color: $text !important;
   font-size: 0.9rem;
@@ -104,7 +127,8 @@ nav img .logo {
   position: relative;
   transition: color 0.3s ease;
 
-  &:hover {
+  &:hover,
+  &.active {  // <- aici adaugam clasa active
     color: $primary !important;
   }
 
@@ -119,34 +143,106 @@ nav img .logo {
     transition: width 0.3s ease-in-out;
   }
 
-  &:hover::before {
+  &:hover::before,
+  &.active::before {  // <- underline se activeaza si pentru active
     width: 100%;
   }
 }
 
-/* Theme Button */
-.custom-navbar #themeToggle {
-  margin-left: 1.5rem;
-  border-color: $primary;
-  color: $primary;
-  font-weight: 700;
-  transition: all 0.3s ease;
+/* Mobile Navbar */
+@media (max-width: 991px) {
+  .custom-navbar {
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
-  &:hover {
-    background-color: $primary;
-    color: $dark-text;
+    .logo {
+      margin-bottom: 10px;
+      width: 50px;
+    }
+
+    .navbar-brand {
+      font-size: 1.4rem;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    .custom-links {
+      width: 100%;
+      margin-top: 10px;
+
+      .nav-link {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        text-align: left;
+
+        &::before {
+          top: auto;
+          bottom: 0;
+          height: 2px;
+        }
+      }
+    }
+
+    /* Butonul de dark mode */
+    // .theme-toggle {
+    //   position: absolute;
+    //   top: 10px;
+    //   right: 10px;
+    // }
   }
 }
 
-/* Responsive */
-@media (max-width: 991px) {
-  .custom-navbar .custom-links .nav-link {
-    margin-left: 0;
-    padding: 0.5rem 0;
+/* Toggler icon custom */
+.toggler-icon-custom {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1050;
+  border: none;
+  background: transparent;
+  padding: 0;
+
+  .navbar-toggler-icon {
+    background-image: none; // eliminăm icon-ul default al Bootstrap
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: $primary;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      background-color: $primary;
+      transition: all 0.3s ease;
+    }
+
+    &::before {
+      top: -10px;
+    }
+
+    &::after {
+      top: 10px;
+    }
+  }
+}
+
+
+/* Small screens extra adjustments */
+@media (max-width: 575px) {
+  .custom-navbar .navbar-brand {
+    font-size: 1.2rem;
   }
 
   .custom-navbar .logo {
-    width: 50px;
+    width: 40px;
   }
 }
 

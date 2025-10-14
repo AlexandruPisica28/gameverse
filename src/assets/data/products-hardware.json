@@ -1,0 +1,103 @@
+[
+  {
+    "id": 101,
+    "title": "PlayStation 5",
+    "price": 499.99,
+    "image": "https://s13emagst.akamaized.net/products/36338/36337698/images/res_41fa99a7857e05bc25cabef31271cd53.jpg"
+  },
+  {
+    "id": 102,
+    "title": "Xbox Series X",
+    "price": 499.99,
+    "image": "https://lcdn.altex.ro/media/catalog/product/C/o/Consola-Xbox-Series-X-Screenshot-01.jpg"
+  },
+  {
+    "id": 103,
+    "title": "RTX 4070 GPU",
+    "price": 799.99,
+    "image": "https://s13emagst.akamaized.net/products/85613/85612104/images/res_df495e756581c60fc6cfe27341cf2276.jpg?width=720&height=720&hash=8D457C511AA97CA90238E86CD19131FF"
+  },
+  {
+    "id": 104,
+    "title": "Intel i7 13700K",
+    "price": 399.99,
+    "image": "https://s13emagst.akamaized.net/products/49584/49583704/images/res_8590ecb3f699d23550568ee4bd62e2a2.jpg?width=720&height=720&hash=406D639CFD419ED3C8129E672DB8BDFA"
+  },
+  {
+    "id": 105,
+    "title": "Corsair 16GB RAM",
+    "price": 99.99,
+    "image": "data:image/jpeg;base64,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rXYk7vE6WG8RN82XyXw9E5smd73z1bMQe1RwXymaiXXRrWc8ymdSZ2IiJ1QREQEREBERAREQEREBERAREQE820sHSq0mp11VqZG8GNhYa3v1cOM9M8u1aGehWT+ZHX4qRMkcA9sS4EVaVPArRCpTCtzCqKYOZza46R3gSdfjObYIWcTZdv4YjK5N85qXu2ZhZiBfXQW4aDxPVjvq+Yy2HOc6GDZdcmWxXNfhmtpbzmROzcLiZCWs1+70P95lMDsOtVtcc2pI3nuDqUFwvE/aKeod82zk3yKNW3M0Wqm2tSpYUkJUdugIz953ZFtasTiN5VGnM7zs07A7LrViMi2U23n3V1IFx28ervm08n+RfOEBKb1346C1JCUJGbqGrJ0j1GdW2RyApqc+Kc1GuTkS60hdmaxPFul3DThNvw2HSmoSmioo4KgCqPISOnUvzOIVmteN2k7H9nygD6S+moFOjooFlFi3gg4W4nWblgcBSorlpU1QdeUak9pPWe8z0xOtNOtOIRa825IiJaSIiAiIgIiICIiAiIgIiICIiAiIgIiICIiB8xcqlSlisVSqhmC5lpDOVp0nzZTUIHE2VrDta5va02LkTyUevSpVMPh+koY1quiBt4HKT1Aqh3QeM65ieRmAqYk4qphKT1dNXBZLgk5shOXNc3va8zwE5W0+qMTK4vhqex+QdCnZq5NZuwjLSH4f4uoa6aDQTa6dMKAqgADQAAAAdgAl0S60rWMRCZtM8kREphERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQP//Z"
+  },
+  {
+    "id": 106,
+    "title": "PlayStation 5 Slim",
+    "price": 449.99,
+    "image": "https://p1.akcdn.net/full/1228406944.sony-playstation-5-ps5-slim-digital-edition.jpg",
+    "condition": "new"
+  },
+  {
+    "id": 107,
+    "title": "PlayStation 5 Pro",
+    "price": 599.99,
+    "image": "https://s13emagst.akamaized.net/products/83035/83034244/images/res_c1837c0e3ac682e41e72151fb9fe7bf7.jpg?width=720&height=720&hash=D816DFC99186BDBA89E66AFC8533A97F",
+    "condition": "new"
+  },
+  {
+    "id": 108,
+    "title": "PlayStation 5 (second-hand)",
+    "price": 350.00,
+    "image": "https://psxbox.ro/wp-content/uploads/2022/08/s-l640.jpg",
+    "condition": "used"
+  },
+  {
+    "id": 109,
+    "title": "PlayStation 5 Slim (second-hand)",
+    "price": 300.00,
+    "image": "https://frankfurt.apollo.olxcdn.com/v1/files/r9s7udpwicyn2-RO/image",
+    "condition": "used"
+  },
+  {
+    "id": 110,
+    "title": "PlayStation 5 Pro (second-hand)",
+    "price": 420.00,
+    "image": "https://frankfurt.apollo.olxcdn.com/v1/files/itk4pzlsnvsr3-RO/image",
+    "condition": "used"
+  },
+  {
+    "id": 111,
+    "title": "MSI B650 Motherboard",
+    "price": 249.99,
+    "image": "https://s13emagst.akamaized.net/products/74509/74508508/images/res_ff4780d0a6149e1d4defa5ff2c33708f.jpg?width=720&height=720&hash=AC7DD68F836E7C608951BAA11B25A992"
+  },
+  {
+    "id": 112,
+    "title": "Samsung 980 Pro 1TB SSD",
+    "price": 149.99,
+    "image": "https://s13emagst.akamaized.net/products/33380/33379005/images/res_168e870023e9fc48008be90b75c93993.jpg?width=720&height=720&hash=B5EDEBEE939C9F1310BB1C3F6E1D213D"
+  },
+  {
+    "id": 113,
+    "title": "Corsair RM850 PSU",
+    "price": 129.99,
+    "image": "https://s13emagst.akamaized.net/products/22895/22894323/images/res_a1a9a4fe07b93c4fef55cc4dd3042201.jpg"
+  },
+  {
+    "id": 114,
+    "title": "Noctua NH-D15 CPU Cooler",
+    "price": 89.99,
+    "image": "https://2.grgs.ro/images/products/1/750014/843433/normal/nh-d15-5c916d1a22d2bacc987b8d116f39d884.jpg"
+  },
+  {
+    "id": 115,
+    "title": "LG 27\" 144Hz Monitor",
+    "price": 299.99,
+    "image": "https://3.grgs.ro/images/products/1/3026/2132378/normal/gaming-ultragear-27gl63t-b-27-inch-1-ms-negru-g-sync-compatible-freesync-144-hz-71fbe94e7589e5f07ae97e451a5c4fa1.jpg"
+  },
+  {
+    "id": 116,
+    "title": "AMD Ryzen 7 7700X",
+    "price": 329.99,
+    "image": "https://lcdn.mediagalaxy.ro/media/catalog/product/a/m/amd_ryzen_7_7000_series_2_c98421ec.jpg"
+  }
+]
