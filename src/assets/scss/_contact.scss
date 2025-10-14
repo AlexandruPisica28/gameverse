@@ -1,0 +1,139 @@
+@use 'variables' as *;
+
+.contact-section {
+  background-color: $bg;
+  color: $text;
+  scroll-margin-top: 80px;
+  font-family: $font1;
+
+  .section-title {
+    color: $primary;
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    color: $text;
+  }
+
+  // Contact form styling
+  .contact-form {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+    font-family: $font1;
+
+    &:hover {
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .custom-input {
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: $primary;
+        box-shadow: 0 0 8px rgba($primary, 0.3);
+        outline: none;
+      }
+    }
+
+    .custom-btn {
+      border-radius: 10px;
+      background-color: $primary;
+      border: none;
+      font-weight: 600;
+      font-family: $font1;
+      letter-spacing: 0.5px;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: $primary;
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  // Contact info box
+  .contact-info {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: $text;
+    font-family: $font1;
+    transition: 0.3s;
+
+    h5 {
+      color: $primary;
+    }
+
+    i {
+      font-size: 1.2rem;
+      color: $primary;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        font-size: 1.3rem;
+        color: #fff;
+        transition: all 0.3s ease;
+        text-decoration: none;
+
+        &.facebook {
+          background: #3b5998;
+        }
+
+        &.twitter {
+          background: #1da1f2;
+        }
+
+        &.instagram {
+          background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+
+  iframe {
+    border-radius: 15px;
+    margin-top: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  }
+}
+
+// 🔹 Dark mode variant (dacă vrei să adaugi suport ulterior)
+.dark-mode {
+  .contact-section {
+    background-color: $dark-bg;
+    color: $dark-text;
+
+    .contact-form,
+    .contact-info {
+      background: $dark-bg;
+      color: $dark-text;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .custom-input {
+      background: $dark-bg;
+      color: $dark-text;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}

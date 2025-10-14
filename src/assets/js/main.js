@@ -1,6 +1,7 @@
 import "/src/assets/scss/main.scss"; 
 import "./generateProduct.js";
 import "./generateHardware.js";
+import "./Footer.js"
 
 (function() {
   "use strict";
@@ -135,6 +136,33 @@ navbarlinks.forEach(navbarlink => {
   });
 });
 
+
+// Coș simplu cu localStorage
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+addToCartButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const product = {
+      id: button.dataset.id,
+      title: button.dataset.title,
+      price: parseFloat(button.dataset.price)
+    };
+
+    // Ia coșul existent din localStorage sau creează unul nou
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Adaugă produsul în coș
+    cart.push(product);
+
+    // Salvează în localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Mesaj rapid
+    alert(`${product.title} a fost adăugat în coș!`);
+  });
+});
+
+
 // ========================
 // Dark mode toggle
 // ========================
@@ -162,7 +190,5 @@ navbarlinks.forEach(navbarlink => {
       form.classList.add('was-validated')
     }, false)
   })
- 
-  // FINAL VALIDARE FORM
 
 })()
