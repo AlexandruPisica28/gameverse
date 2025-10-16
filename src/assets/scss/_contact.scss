@@ -5,10 +5,12 @@
   color: $text;
   scroll-margin-top: 80px;
   font-family: $font1;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   .section-title {
-    color: $primary;
+    color: $text;
     font-size: 2rem;
+    
   }
 
   .section-subtitle {
@@ -18,19 +20,25 @@
 
   // Contact form styling
   .contact-form {
-    background: #fff;
+    background-color: $bg; // 🔹 schimbat de la #fff la variabilă
     border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
     font-family: $font1;
 
     &:hover {
       box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
     }
 
+    .form-label-custom {
+      color: $text !important;
+    }
+
     .custom-input {
+      background-color: $bg; // 🔹 compatibil cu dark mode
+      color: $text;          // 🔹 textul se adaptează
       border-radius: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid rgba(0,0,0,0.1);
       padding: 0.75rem;
       transition: all 0.3s ease;
 
@@ -59,16 +67,27 @@
 
   // Contact info box
   .contact-info {
-    background: #fff;
+    background-color: $bg; // 🔹 schimbat la variabilă
     border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.05);
     color: $text;
     font-family: $font1;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 
     h5 {
       color: $primary;
     }
+
+    h6{
+      color: $text;
+      font-weight: 500;
+    }
+
+    p{
+      color: $text;
+      line-height: 1.6;
+    }
+    
 
     i {
       font-size: 1.2rem;
@@ -90,21 +109,13 @@
         transition: all 0.3s ease;
         text-decoration: none;
 
-        &.facebook {
-          background: #3b5998;
-        }
-
-        &.twitter {
-          background: #1da1f2;
-        }
-
-        &.instagram {
-          background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-        }
+        &.facebook { background: #3b5998; }
+        &.twitter { background: #1da1f2; }
+        &.instagram { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af); }
 
         &:hover {
           transform: scale(1.1);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
       }
     }
@@ -113,27 +124,75 @@
   iframe {
     border-radius: 15px;
     margin-top: 30px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 20px rgba(0,0,0,0.08);
   }
 }
 
-// 🔹 Dark mode variant (dacă vrei să adaugi suport ulterior)
+// 🔹 Dark mode
 .dark-mode {
   .contact-section {
     background-color: $dark-bg;
     color: $dark-text;
 
-    .contact-form,
-    .contact-info {
-      background: $dark-bg;
-      color: $dark-text;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+    .section-title { color: $dark-text !important; }
+    .section-subtitle { color: $dark-subtext !important; }
+
+    .contact-form{
+      background-color: $dark-card !important;
+
+      
+     .form-label-custom {
+      color: $dark-text !important;
+
+    
+    }
+    
     }
 
-    .custom-input {
-      background: $dark-bg;
+    
+
+    .contact-form,
+    .contact-info {
+      background-color: $dark-card !important;
       color: $dark-text;
-      border-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255,255,255,0.1);
+
+      .social-icons i{
+      margin-top: 1rem;
+      color: $primary;
+      }
+
+      .custom-input {
+        background-color: $dark-hover;
+        color: $dark-text;
+        border-color: rgba(255,255,255,0.1);
+      }
+
+      p{
+        color: $dark-text;
+      }
+
+      h6{
+        color: $dark-text;
+      }
+      
+
+      .custom-btn {
+        background-color: $dark-primary;
+        color: #fff;
+
+        &:hover {
+          background-color: $dark-primary;
+        }
+      }
+
+      i { color: $dark-primary; }
+      h5 { color: $dark-primary; }
     }
   }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+  color: $dark-subtext;
+}
 }

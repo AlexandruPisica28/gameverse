@@ -1,9 +1,10 @@
 @use 'variables' as *;
 
 .custom-footer {
-  background-color: $dark-bg;
-  color: $dark-text;
+  background-color: $bg;
+  color: $text;
   font-family: $font1;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   a {
     color: $secondary;
@@ -20,7 +21,7 @@
   }
 
   .footer-newsletter {
-    background-color: $dark-bg;
+    background-color: $secondary;
     text-align: center;
     padding: 2rem 1rem;
 
@@ -34,7 +35,7 @@
     }
 
     input[type="submit"] {
-      background-color: $secondary;
+      background-color: $primary;
       border: none;
       color: $dark-text;
       padding: 0.6rem 1.2rem;
@@ -63,6 +64,7 @@
 
       li {
         margin-bottom: 0.5rem;
+
         i {
           color: $secondary;
           margin-right: 0.3rem;
@@ -83,7 +85,7 @@
       transition: 0.3s ease;
 
       &:hover {
-        background: $secondary, 8%;
+        background: $secondary;
       }
     }
   }
@@ -91,8 +93,57 @@
   .copyright {
     text-align: center;
     font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding-top: 1rem;
+    color: $text;
+  }
+}
+
+// 🔹 Dark mode
+.dark-mode {
+  .custom-footer {
+    background-color: $dark-bg;
     color: $dark-text;
+
+    a { color: $dark-secondary; }
+
+    h3, h4 { color: $dark-primary; }
+
+    .footer-newsletter {
+      background-color: $dark-card;
+
+      input[type="email"] {
+        background-color: $dark-bg;
+        color: $dark-text;
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+
+      input[type="submit"] {
+        background-color: $dark-secondary;
+        color: $dark-text;
+
+        &:hover {
+          background-color: $dark-secondary;
+        }
+      }
+    }
+
+    .footer-top {
+      ul li i { color: $dark-secondary; }
+
+      .social-links a {
+        background: $dark-secondary;
+        color: $dark-bg;
+
+        &:hover {
+          background: $dark-secondary;
+        }
+      }
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: $dark-text;
+    }
   }
 }

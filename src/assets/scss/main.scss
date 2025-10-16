@@ -13,4 +13,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
 
 
+body {
+  background-color: $bg;
+  color: $text;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: $dark-bg;
+  color: $dark-text;
+
+  .navbar, .card, footer {
+    background-color: $dark-card;
+    color: $dark-text;
+  }
+
+  a {
+    color: $dark-primary;
+
+    &:hover {
+      color: $dark-primary;
+    }
+  }
+
+  .btn-primary {
+    background-color: $dark-primary;
+    border-color: $dark-primary;
+    color: #fff;
+
+    &:hover {
+      background-color: $dark-primary;
+      border-color: $dark-primary;
+    }
+  }
+
+  .btn-secondary {
+    background-color: $dark-secondary;
+    border-color: $dark-secondary;
+
+    &:hover {
+      background-color: $dark-secondary;
+      border-color: $dark-secondary;
+    }
+  }
+
+  .theme-label {
+    background-color: $dark-hover;
+
+    .ball {
+      background-color: $dark-primary;
+    }
+
+    i {
+      color: $dark-text;
+    }
+  }
+}
+
+
+
+
+
+
 

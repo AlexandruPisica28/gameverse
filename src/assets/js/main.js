@@ -167,6 +167,27 @@ addToCartButtons.forEach(button => {
 // Dark mode toggle
 // ========================
 
+const toggleButton = document.getElementById('darkModeToggle');
+const body = document.body;
+
+// ✅ Verifică tema salvată anterior
+if (localStorage.getItem('theme') === 'dark') {
+  body.classList.add('dark-mode');
+  toggleButton.checked = true; // pentru checkbox
+} 
+
+// 🔛 Toggle dark mode la click
+toggleButton.addEventListener('change', () => {
+  body.classList.toggle('dark-mode');
+
+  if (body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+});
+
+
 
  
 
@@ -176,19 +197,18 @@ addToCartButtons.forEach(button => {
 // Validare formular
 // ========================
 
-  var forms = document.querySelectorAll('.needs-validation')
+  // var forms = document.querySelectorAll('.needs-validation')
 
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-  .forEach(function (form) {
-    form.addEventListener('submit', function (event) {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
+  // Array.prototype.slice.call(forms)
+  // .forEach(function (form) {
+  //   form.addEventListener('submit', function (event) {
+  //     if (!form.checkValidity()) {
+  //       event.preventDefault()
+  //       event.stopPropagation()
+  //     }
 
-      form.classList.add('was-validated')
-    }, false)
-  })
+  //     form.classList.add('was-validated')
+  //   }, false)
+  // })
 
 })()

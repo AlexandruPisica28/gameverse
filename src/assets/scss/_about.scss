@@ -97,3 +97,37 @@
     transform: translateY(0);
   }
 }
+
+.dark-mode {
+  .about-section {
+    background: linear-gradient(135deg, rgba($dark-bg, 0.98), rgba($dark-card, 0.95));
+    color: $dark-text;
+
+    h2 {
+      color: $dark-primary;
+
+      &::after {
+        background: $dark-primary;
+      }
+    }
+
+    p {
+      color: $dark-text !important;
+    }
+
+    .btn {
+      background-color: $dark-primary;
+      color: $dark-text;
+
+      &:hover {
+        background-color: $dark-secondary;
+        box-shadow: 0 6px 15px rgba($dark-secondary, 0.4);
+      }
+    }
+
+    img {
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.08);
+      background-color: $dark-hover;
+    }
+  }
+}

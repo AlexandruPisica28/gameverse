@@ -9,44 +9,48 @@
     </div>
 
     <div class="row g-4">
-      <!-- Contact Form -->
-      <div class="col-md-6">
-        <form class="contact-form p-4 rounded shadow-sm bg-light">
-          <div class="mb-3">
-            <label for="name" class="form-label fw-semibold">Nume</label>
-            <input
-              type="text"
-              class="form-control custom-input"
-              id="name"
-              placeholder="Enter your name"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label fw-semibold">Email</label>
-            <input
-              type="email"
-              class="form-control custom-input"
-              id="email"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label fw-semibold">Mesaj</label>
-            <textarea
-              class="form-control custom-input"
-              id="message"
-              rows="5"
-              placeholder="Write your message here..."
-              required
-            ></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-100 custom-btn">
-            Trimite mesaj
-          </button>
-        </form>
-      </div>
+     <!-- Contact Form -->
+<div class="col-md-6">
+  <form id="contactForm" method="post" action="#" class="contact-form p-4 rounded shadow-sm bg-light">
+    <div class="mb-3">
+      <label for="name" class="form-label fw-semibold form-label-custom">Nume</label>
+      <input
+        type="text"
+        class="form-control custom-input"
+        id="name"
+        placeholder="Enter your name"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label fw-semibold form-label-custom">Email</label>
+      <input
+        type="email"
+        class="form-control custom-input"
+        id="email"
+        placeholder="Enter your email"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label fw-semibold form-label-custom">Mesaj</label>
+      <textarea
+        class="form-control custom-input"
+        id="message"
+        rows="5"
+        placeholder="Write your message here..."
+        required
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary w-100 custom-btn">
+      Trimite mesaj
+    </button>
+
+    <!-- ✅ Mesaj de validare -->
+    <p id="formMessage" class="fw-semibold mt-3 text-center" style="display:none;"></p>
+  </form>
+</div>
+
 
       <!-- Contact Info -->
       <div class="col-md-6">

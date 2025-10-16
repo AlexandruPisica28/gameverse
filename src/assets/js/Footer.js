@@ -1,23 +1,42 @@
-const form = document.getElementById('newsletterForm');
-const emailInput = document.getElementById('newsletterEmail');
-const message = document.getElementById('newsletterMessage');
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const email = emailInput.value.trim();
+  const contactForm = document.getElementById('contactForm');
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const messageInput = document.getElementById('message');
+  const formMessage = document.getElementById('formMessage');
 
-  if (!validateEmail(email)) {
-    message.textContent = '⚠️ Te rugăm să introduci un email valid.';
-    message.style.color = '#FF7F11';
-    return;
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const messageText = messageInput.value.trim();
+
+    if (name === '' || email === '' || messageText === '') {
+      formMessage.textContent = '⚠️ Te rugăm să completezi toate câmpurile.';
+      formMessage.style.color = '#FF7F11';
+      formMessage.style.display = 'block';
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      formMessage.textContent = '⚠️ Te rugăm să introduci un email valid.';
+      formMessage.style.color = '#FF7F11';
+      formMessage.style.display = 'block';
+      return;
+    }
+
+    formMessage.textContent = '✅ Mesajul tău a fost trimis cu succes!';
+    formMessage.style.color = '#28a745';
+    formMessage.style.display = 'block';
+    contactForm.reset();
+
+    setTimeout(() => {
+      formMessage.style.display = 'none';
+    }, 4000);
+  });
+
+  function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
   }
-
-  message.textContent = '✅ Mulțumim pentru abonare!';
-  message.style.color = '#28a745';
-  form.reset();
-});
-
-function validateEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-}
