@@ -1,0 +1,41 @@
+// @use "../variables" as *;
+
+// body {
+//   background-color: $bg;
+//   color: $text;
+//   font-family: $font1;
+//   transition: background-color 0.3s ease, color 0.3s ease;
+// }
+
+// a {
+//   color: $primary;
+//   text-decoration: none;
+
+//   &:hover {
+//     color: $primary;
+//   }
+// }
+
+// // === DARK MODE GLOBAL ===
+// .dark-mode {
+//   background-color: $dark-bg;
+//   color: $dark-text;
+
+//   .gv-navbar, .card, footer {
+//     background-color: $dark-card;
+//     color: $dark-text;
+//   }
+
+//   a {
+//     color: $dark-primary;
+
+//     &:hover {
+//       color: $dark-primary;
+//     }
+//   }
+
+//   .btn-primary {
+//     background-color: $dark-primary;
+//     color: #fff;
+//   }
+// }

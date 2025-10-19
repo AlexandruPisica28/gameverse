@@ -1,14 +1,17 @@
 // Import variabile și mixins
 @use "variables" as *;
 
+// @use "utils/global";
+// @use "utils/responsive";
+
 // Import secțiuni
 @use "header";
 @use "hero";
 @use "products";
 @use "about";
-@use "footer";
 @use "tech";
 @use "contact";
+@use "footer";
 
 @import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
 

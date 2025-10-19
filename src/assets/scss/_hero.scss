@@ -1,55 +1,121 @@
 @use "variables" as *;
 
+/* === HERO SECTION === */
 #hero {
-width: 1500px;
-height: 850px;
-margin: 0 auto;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-background-image: url('/assets/images/banner.jpg');
-background-size: cover;
-background-position: center;
-color: $dark-text;
-font-family: $font2;
-}
+  width: 100%;
+  min-height: 100vh; /* se ajustează automat după ecran */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('/assets/images/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: $dark-text;
+  font-family: $font2;
+  padding: 4rem 1rem; /* spațiu interior pe mobil */
 
-#hero div h1{
-    font-size: 80px;
+  div {
+    max-width: 1000px;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem); /* adaptiv: 40px-80px */
     margin-bottom: 20px;
-}
+    color: #ffd54f;
+    text-shadow: 3px 3px #000;
+  }
 
-#hero div p{
-    font-size: 40px;
-}
+  p {
+    font-size: clamp(1rem, 3vw, 2rem); /* adaptiv: 16px-40px */
+    font-weight: 600;
+    color: #ffdf7e;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px #000;
+  }
 
+  .custom-btn {
+    background-color: #f39c12 !important;
+    border: none !important;
+    color: #fff !important;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.2s;
 
-.custom-btn {
-  background-color: #f39c12 !important;
-  border: none !important;
-  color: #fff !important;
-  padding: 12px 30px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  transition: background 0.3s ease, transform 0.2s;
-
-  &:hover {
-    background-color: #ffb142 !important;
-    transform: scale(1.05);
+    &:hover {
+      background-color: #ffb142 !important;
+      transform: scale(1.05);
+    }
   }
 }
 
+/* === RESPONSIVE === */
+@media (max-width: 991px) {
+  #hero {
+    padding: 3rem 1rem;
 
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
 
-/* responsive */
-@media (max-width: 480px) {
-  .btn-products {
-    padding: 0.5rem 0.9rem;
-    font-size: 0.95rem;
+    p {
+      font-size: clamp(1rem, 2.5vw, 1.6rem);
+    }
+
+    .custom-btn {
+      padding: 10px 24px;
+      font-size: 1rem;
+    }
   }
 }
-// ...existing code...
 
+@media (max-width: 576px) {
+  #hero {
+    flex-direction: column;
+    min-height: 90vh;
+    padding: 2rem 1rem;
 
+    h1 {
+      font-size: 2.3rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .custom-btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* === DARK MODE === */
+.dark-mode {
+  #hero {
+    color: $dark-text;
+
+    h1 {
+      color: $primary;
+      text-shadow: 2px 2px $dark-bg;
+    }
+
+    p {
+      color: $dark-secondary;
+      text-shadow: 1px 1px $dark-bg;
+    }
+
+    .custom-btn {
+      background-color: $dark-primary !important;
+
+      &:hover {
+        background-color: $primary !important;
+      }
+    }
+  }
+}

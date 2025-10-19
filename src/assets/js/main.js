@@ -1,10 +1,31 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import * as bootstrap from "bootstrap";
+
+
 import "/src/assets/scss/main.scss"; 
 import "./generateProduct.js";
 import "./generateHardware.js";
-import "./Footer.js"
+
+import { displayProducts } from "./generateProduct.js";
+import "./validate.js";
+
+
+
+
+
 
 (function() {
   "use strict";
+
+// ========================
+// NAVBAR COLLAPSE ON RESIZE
+// ========================
+  window.addEventListener("resize", () => {
+  const navbarCollapse = document.querySelector(".navbar-collapse");
+  if (window.innerWidth > 991 && navbarCollapse.classList.contains("show")) {
+    new bootstrap.Collapse(navbarCollapse).hide();
+  }
+});
 
 
 
@@ -12,70 +33,123 @@ import "./Footer.js"
 // PRODUCTS JS
 // ========================
 
-// Containerul unde se vor afișa cardurile
-const productsContainer = document.getElementById("products-container");
 
-// 1️⃣ GET: citim produsele din JSON local
 async function fetchProducts() {
   try {
-    const response = await fetch("/assets/data/products.json"); // ajustează calea dacă e nevoie
+    const response = await fetch("http://localhost:4000/products");
     const products = await response.json();
     displayProducts(products);
   } catch (error) {
     console.error("Eroare la încărcarea produselor:", error);
   }
+
 }
-
-// 2️⃣ Funcție pentru afișarea produselor în HTML
-function displayProducts(products) {
-  productsContainer.innerHTML = ""; // curățăm containerul
-
-  products.forEach(product => {
-    const card = document.createElement("div");
-    card.classList.add("col-sm-6", "col-md-4", "col-lg-3");
-
-    card.innerHTML = `
-      <div class="product-card">
-        <img src="${product.image}" alt="${product.title}" class="product-img">
-        <h3 class="product-title">${product.title}</h3>
-        <p class="product-price">$${product.price}</p>
-        <a href="#" class="btn custom-btn">Vezi detalii</a>
-      </div>
-    `;
-
-    productsContainer.appendChild(card);
-  });
-}
-
-// 3️⃣ POST: adaugă un produs nou în memorie (simulat)
-function addProduct(product) {
-  fetchProducts().then(products => {
-    products.push(product);
-    displayProducts(products);
-  });
-}
-
-// 4️⃣ PUT: modifică un produs existent (simulat)
-function updateProduct(id, newData) {
-  fetchProducts().then(products => {
-    const index = products.findIndex(p => p.id === id);
-    if (index > -1) {
-      products[index] = { ...products[index], ...newData };
-      displayProducts(products);
-    }
-  });
-}
-
-// 5️⃣ DELETE: șterge un produs (simulat)
-function deleteProduct(id) {
-  fetchProducts().then(products => {
-    const filtered = products.filter(p => p.id !== id);
-    displayProducts(filtered);
-  });
-}
-
-// 🔹 Inițializare
 fetchProducts();
+
+// === Afișează produsele în HTML ===
+// function displayProducts(products) {
+//   const container = document.getElementById("products-container");
+//   if (!container) return; // dacă nu există containerul, ieșim
+
+//   container.innerHTML = "";
+
+//   products.forEach(product => {
+//     const card = document.createElement("div");
+//     card.classList.add("col-sm-6", "col-md-4", "col-lg-3");
+
+//     card.innerHTML = `
+//       <div class="product-card">
+//         <img src="${product.image}" alt="${product.title}" class="product-img">
+//         <h3 class="product-title">${product.title}</h3>
+//         <p class="product-price">$${product.price}</p>
+//          <a href="#" class="btn custom-btn see-details">Vezi detalii</a>
+//         <button class="btn custom-btn add-to-cart"
+//              data-id="${product.id}"
+//               data-title="${product.title}"
+//              data-price="${product.price}">
+//              Adaugă în coș
+//             </button>
+//            </div>
+//       </div>
+//     `;
+
+//     container.appendChild(card);
+//   });
+//    const detailButtons = document.querySelectorAll('.see-details');
+//     detailButtons.forEach(btn => {
+//       btn.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         const title = btn.closest('.product-card').querySelector('.product-title').textContent;
+//         const price = btn.closest('.product-card').querySelector('.product-price').textContent;
+//         alert(`${title}\n${price}\nDetaliile complete vor fi disponibile în curând!`);
+//       });
+//     });
+// }
+// fetchProducts();
+
+
+// function displayProducts(products) {
+//   productsContainer.innerHTML = ""; 
+
+//   products.forEach(product => {
+//     const card = document.createElement("div");
+//     card.classList.add("col-sm-6", "col-md-4", "col-lg-3");
+
+//     card.innerHTML = `
+//       <div class="product-card">
+//         <img src="${product.image}" alt="${product.title}" class="product-img">
+//         <h3 class="product-title">${product.title}</h3>
+//         <p class="product-price">$${product.price}</p>
+//         <div class="d-flex justify-content-between align-items-center">
+//         <a href="#" class="btn custom-btn see-details">Vezi detalii</a>
+//         <button class="btn custom-btn add-to-cart"
+//               data-id="${product.id}"
+//               data-title="${product.title}"
+//               data-price="${product.price}">
+//               Adaugă în coș
+//             </button>
+//             </div>
+//       </div>
+//     `;
+
+//     productsContainer.appendChild(card);
+//   });
+
+    // const detailButtons = document.querySelectorAll('.see-details');
+    // detailButtons.forEach(btn => {
+    //   btn.addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     const title = btn.closest('.product-card').querySelector('.product-title').textContent;
+    //     const price = btn.closest('.product-card').querySelector('.product-price').textContent;
+    //     alert(`${title}\n${price}\nDetaliile complete vor fi disponibile în curând!`);
+    //   });
+    // });
+// }
+
+// function addProduct(product) {
+//   fetchProducts().then(products => {
+//     products.push(product);
+//     displayProducts(products);
+//   });
+// }
+
+// function updateProduct(id, newData) {
+//   fetchProducts().then(products => {
+//     const index = products.findIndex(p => p.id === id);
+//     if (index > -1) {
+//       products[index] = { ...products[index], ...newData };
+//       displayProducts(products);
+//     }
+//   });
+// }
+
+// function deleteProduct(id) {
+//   fetchProducts().then(products => {
+//     const filtered = products.filter(p => p.id !== id);
+//     displayProducts(filtered);
+//   });
+// }
+
 
 
 
@@ -106,7 +180,7 @@ const onscroll = (el, listener) => {
  let navbarlinks = select('.custom-links .nav-link', true);
 
 const navbarlinksActive = () => {
-  let position = window.scrollY + 200; // offset pentru header fix
+  let position = window.scrollY + 200; 
   navbarlinks.forEach(navbarlink => {
     if (!navbarlink.hash) return;
     let section = select(navbarlink.hash);
@@ -129,7 +203,7 @@ navbarlinks.forEach(navbarlink => {
     let section = select(navbarlink.hash);
     if (section) {
       window.scrollTo({
-        top: section.offsetTop - 80, // ajustează offset-ul după înălțimea navbarului
+        top: section.offsetTop - 80,
         behavior: 'smooth'
       });
     }
@@ -137,37 +211,13 @@ navbarlinks.forEach(navbarlink => {
 });
 
 
-// Coș simplu cu localStorage
-const addToCartButtons = document.querySelectorAll('.add-to-cart');
-
-addToCartButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const product = {
-      id: button.dataset.id,
-      title: button.dataset.title,
-      price: parseFloat(button.dataset.price)
-    };
-
-    // Ia coșul existent din localStorage sau creează unul nou
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Adaugă produsul în coș
-    cart.push(product);
-
-    // Salvează în localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Mesaj rapid
-    alert(`${product.title} a fost adăugat în coș!`);
-  });
-});
 
 
 // ========================
 // Dark mode toggle
 // ========================
 
-const toggleButton = document.getElementById('darkModeToggle');
+const toggleButton = document.getElementById('theme-toggle');
 const body = document.body;
 
 // ✅ Verifică tema salvată anterior
@@ -189,26 +239,7 @@ toggleButton.addEventListener('change', () => {
 
 
 
- 
-
-
-
-  // ========================
-// Validare formular
-// ========================
-
-  // var forms = document.querySelectorAll('.needs-validation')
-
-  // Array.prototype.slice.call(forms)
-  // .forEach(function (form) {
-  //   form.addEventListener('submit', function (event) {
-  //     if (!form.checkValidity()) {
-  //       event.preventDefault()
-  //       event.stopPropagation()
-  //     }
-
-  //     form.classList.add('was-validated')
-  //   }, false)
-  // })
-
 })()
+
+
+

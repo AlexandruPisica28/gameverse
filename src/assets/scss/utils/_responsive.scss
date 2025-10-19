@@ -1,0 +1,63 @@
+// @use "../variables" as *;
+
+// @media (max-width: 991px) {
+//   body {
+//     font-size: 0.95rem;
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .gv-navbar {
+//     .gv-links {
+//       background-color: rgba($secondary, 0.97);
+//       border-radius: 10px;
+//       padding: 1rem;
+//       margin-top: 0.5rem;
+//       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+//     }
+
+//     .gv-links .nav-link {
+//       display: block;
+//       text-align: center;
+//       margin: 0.6rem 0;
+//       font-size: 1rem;
+//     }
+
+//     .gv-theme-toggle,
+//     .gv-cart {
+//       margin-top: 1rem;
+//       justify-content: center;
+//     }
+//   }
+// }
+
+// @media (max-width: 575px) {
+//   .gv-navbar {
+//     .gv-brand-text {
+//       font-size: 1.2rem;
+//       padding: 4px 8px;
+//     }
+
+//     .gv-logo {
+//       width: 45px;
+//     }
+
+//     .gv-theme-text {
+//       font-size: 0.8rem;
+//     }
+
+//     .gv-theme-toggle {
+//       flex-direction: column;
+//       gap: 0.4rem;
+//     }
+
+//     .gv-cart {
+//       flex-direction: column;
+//       gap: 0.4rem;
+
+//       .nav-link {
+//         font-size: 0.9rem;
+//       }
+//     }
+//   }
+// }

@@ -1,46 +1,53 @@
-<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
-  <div class="container d-flex align-items-center justify-content-between">
+<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+  <div class="container">
     <!-- Logo -->
-    <a href="#hero" class="d-flex align-items-center navbar-brand">
-      <img src="/assets/images/logo2.png" alt="GameVerse Logo" class="logo me-2" />
+    <a href="#hero" class="navbar-brand d-flex align-items-center">
+      <img src="/assets/images/logo3.png" alt="GameVerse Logo" class="logo me-2" />
       <span class="brand-text">GameVerse</span>
     </a>
-    <button class="navbar-toggler toggler-icon-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
+
+    <!-- Buton meniu mobil -->
+    <button
+      class="navbar-toggler border-0"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars text-light fs-4"></i>
     </button>
-    <div class="collapse navbar-collapse custom-links" id="navbarNav">
-      <ul class="navbar-nav ms-auto nav-bar-custom">
-        <li class="nav-item">
-          <a class="nav-link" href="#hero">Acasă</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#products">Jocuri</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#tech">Tech</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">Despre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
+
+    <!-- Meniu -->
+    <div class="collapse navbar-collapse custom-links justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#hero">Acasă</a></li>
+        <li class="nav-item"><a class="nav-link" href="#products">Jocuri</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tech">Tech</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">Despre</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
-    </div>
-    
-        <div class="theme-toggle d-flex align-items-center">
-      <input type="checkbox" class="theme-checkbox" id="darkModeToggle">
-      <label for="darkModeToggle" class="theme-label">
-        <i class="fa-solid fa-moon"></i>
-        <i class="fa-solid fa-sun"></i>
-        <span class="ball"></span>
-      </label>
-      <span class="theme-text ms-2">Schimbă tema</span>
-    </div>
 
+      <!-- Tema + Coș -->
+      <div class="d-flex align-items-center flex-wrap justify-content-center mt-3 mt-lg-0 gap-3">
+        
+        <!-- 🌙 Switch Modern -->
+        <div class="theme-switch-wrapper">
+          <input type="checkbox" id="theme-toggle" class="theme-switch" />
+          <label for="theme-toggle" class="switch-label">
 
+            <span class="switch-ball"></span>
+          </label>
+        </div>
+
+        <!-- 🛒 Coș -->
+        <div class="cart-container d-flex align-items-center">
+          <a href="#" class="nav-link cart-link">
+            <i class="fa-solid fa-cart-shopping"></i> <span id="cart-count">0.00</span>$
+          </a>
+          <button id="reset-cart" class="btn btn-reset ms-2">✖</button>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
-
-
-

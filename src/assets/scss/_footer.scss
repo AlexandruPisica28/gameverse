@@ -4,14 +4,15 @@
   background-color: $bg;
   color: $text;
   font-family: $font1;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease; 
 
   a {
     color: $secondary;
     text-decoration: none;
+    transition: color 0.3s ease; 
 
     &:hover {
-      color: $secondary;
+      color: $primary;
     }
   }
 
@@ -20,8 +21,9 @@
     color: $primary;
   }
 
+  /* === Newsletter === */
   .footer-newsletter {
-    background-color: $secondary;
+    background-color: $secondary; 
     text-align: center;
     padding: 2rem 1rem;
 
@@ -32,6 +34,7 @@
       margin-right: 0.5rem;
       width: 60%;
       max-width: 300px;
+      font-family: $font1;
     }
 
     input[type="submit"] {
@@ -50,11 +53,12 @@
     }
 
     .form-message {
-      margin-top: 0.8rem;
+      margin-top: 0.8rem; 
       font-size: 0.9rem;
     }
   }
 
+  /* === Top section === */
   .footer-top {
     padding: 3rem 0;
 
@@ -74,22 +78,23 @@
 
     .social-links a {
       display: inline-block;
-      background: $secondary;
+      background: $secondary; 
       color: $dark-bg;
       border-radius: 50%;
       width: 36px;
       height: 36px;
-      text-align: center;
       line-height: 36px;
+      text-align: center;
       margin: 0 4px;
-      transition: 0.3s ease;
+      transition: transform 0.3s ease, background 0.3s ease; 
 
       &:hover {
-        background: $secondary;
+        transform: translateY(-3px); 
       }
     }
   }
 
+  /* === Copyright === */
   .copyright {
     text-align: center;
     font-size: 0.9rem;
@@ -99,15 +104,23 @@
   }
 }
 
-// 🔹 Dark mode
+/* === DARK MODE === */
 .dark-mode {
   .custom-footer {
     background-color: $dark-bg;
     color: $dark-text;
 
-    a { color: $dark-secondary; }
+    a {
+      color: $dark-secondary;
 
-    h3, h4 { color: $dark-primary; }
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    h3, h4 {
+      color: $dark-primary;
+    }
 
     .footer-newsletter {
       background-color: $dark-card;
@@ -115,7 +128,7 @@
       input[type="email"] {
         background-color: $dark-bg;
         color: $dark-text;
-        border: 1px solid rgba(255,255,255,0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
 
       input[type="submit"] {
@@ -123,20 +136,23 @@
         color: $dark-text;
 
         &:hover {
-          background-color: $dark-secondary;
+          background-color: $dark-primary;
         }
       }
     }
 
     .footer-top {
-      ul li i { color: $dark-secondary; }
+      ul li i {
+        color: $dark-secondary;
+      }
 
       .social-links a {
         background: $dark-secondary;
         color: $dark-bg;
 
         &:hover {
-          background: $dark-secondary;
+          transform: translateY(-3px);
+          background: $dark-primary;
         }
       }
     }

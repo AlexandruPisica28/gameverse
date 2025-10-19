@@ -10,7 +10,6 @@
   .section-title {
     color: $text;
     font-size: 2rem;
-    
   }
 
   .section-subtitle {
@@ -18,9 +17,9 @@
     color: $text;
   }
 
-  // Contact form styling
+  /* === FORM === */
   .contact-form {
-    background-color: $bg; // 🔹 schimbat de la #fff la variabilă
+    background-color: $bg;
     border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
@@ -35,10 +34,10 @@
     }
 
     .custom-input {
-      background-color: $bg; // 🔹 compatibil cu dark mode
-      color: $text;          // 🔹 textul se adaptează
+      background-color: $bg;
+      color: $text;
       border-radius: 10px;
-      border: 1px solid rgba(0,0,0,0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
       padding: 0.75rem;
       transition: all 0.3s ease;
 
@@ -56,18 +55,17 @@
       font-weight: 600;
       font-family: $font1;
       letter-spacing: 0.5px;
-      transition: 0.3s;
+      transition: 0.3s ease;
 
       &:hover {
-        background-color: $primary;
         transform: translateY(-2px);
       }
     }
   }
 
-  // Contact info box
+  /* === INFO BOX === */
   .contact-info {
-    background-color: $bg; // 🔹 schimbat la variabilă
+    background-color: $bg;
     border-radius: 12px;
     border: 1px solid rgba(0, 0, 0, 0.05);
     color: $text;
@@ -78,22 +76,18 @@
       color: $primary;
     }
 
-    h6{
+    h6, p {
       color: $text;
       font-weight: 500;
-    }
-
-    p{
-      color: $text;
       line-height: 1.6;
     }
-    
 
     i {
       font-size: 1.2rem;
       color: $primary;
     }
 
+    /* === Social icons === */
     .social-icons {
       margin-top: 1rem;
 
@@ -106,8 +100,8 @@
         border-radius: 50%;
         font-size: 1.3rem;
         color: #fff;
-        transition: all 0.3s ease;
         text-decoration: none;
+        transition: all 0.3s ease;
 
         &.facebook { background: #3b5998; }
         &.twitter { background: #1da1f2; }
@@ -115,7 +109,7 @@
 
         &:hover {
           transform: scale(1.1);
-          box-shadow: 0 0 10px rgba(0,0,0,0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
       }
     }
@@ -124,75 +118,79 @@
   iframe {
     border-radius: 15px;
     margin-top: 30px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.08);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
   }
 }
 
-// 🔹 Dark mode
+/* === DARK MODE === */
 .dark-mode {
   .contact-section {
     background-color: $dark-bg;
     color: $dark-text;
 
-    .section-title { color: $dark-text !important; }
-    .section-subtitle { color: $dark-subtext !important; }
-
-    .contact-form{
-      background-color: $dark-card !important;
-
-      
-     .form-label-custom {
+    .section-title {
       color: $dark-text !important;
-
-    
-    }
-    
     }
 
+    .section-subtitle {
+      color: $dark-subtext !important;
+    }
     
+    .contact-form{
+      .form-label-custom{
+        color: $dark-text !important;
+      }
+    }
 
     .contact-form,
     .contact-info {
       background-color: $dark-card !important;
       color: $dark-text;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
 
       .social-icons i{
-      margin-top: 1rem;
-      color: $primary;
+        color: $primary;
+      }
+
+      h5, i {
+        color: $dark-primary;
+      }
+
+      h6, p {
+        color: $dark-text;
       }
 
       .custom-input {
         background-color: $dark-hover;
         color: $dark-text;
-        border-color: rgba(255,255,255,0.1);
+        border-color: rgba(255, 255, 255, 0.1);
       }
-
-      p{
-        color: $dark-text;
-      }
-
-      h6{
-        color: $dark-text;
-      }
-      
 
       .custom-btn {
         background-color: $dark-primary;
         color: #fff;
 
         &:hover {
-          background-color: $dark-primary;
+          background-color: $dark-secondary;
         }
       }
 
-      i { color: $dark-primary; }
-      h5 { color: $dark-primary; }
+      .social-icons .social-link {
+        background: $dark-secondary;
+        color: $text;
+
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: $dark-subtext;
     }
   }
-
-  .contact-form input::placeholder,
-  .contact-form textarea::placeholder {
-  color: $dark-subtext;
-}
 }
