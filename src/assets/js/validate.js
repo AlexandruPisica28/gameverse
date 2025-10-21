@@ -40,20 +40,3 @@
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   }
-
-
-  //  // === Trimitem datele în db.json (prin json-server)
-  // await fetch("http://localhost:4000/messages", {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify({ name, email, message }),
-  // });
-
-  // formMessage.textContent = "✅ Mesaj trimis cu succes!";
-  // formMessage.style.color = "#28a745";
-  // formMessage.style.display = "block";
-  // form.reset();
-
-  // setTimeout(() => {
-  //   formMessage.style.display = "none";
-  // }, 3000);

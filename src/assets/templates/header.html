@@ -19,7 +19,7 @@
     </button>
 
     <!-- Meniu -->
-    <div class="collapse navbar-collapse custom-links justify-content-end" id="navbarNav">
+    <div class="collapse navbar-collapse custom-links justify-content-end " id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="#hero">Acasă</a></li>
         <li class="nav-item"><a class="nav-link" href="#products">Jocuri</a></li>
@@ -27,6 +27,10 @@
         <li class="nav-item"><a class="nav-link" href="#about">Despre</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
+      
+      <button class="btn btn-close-menu d-lg-none mt-3">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
 
       <!-- Tema + Coș -->
       <div class="d-flex align-items-center flex-wrap justify-content-center mt-3 mt-lg-0 gap-3">
@@ -42,9 +46,13 @@
 
         <!-- 🛒 Coș -->
         <div class="cart-container d-flex align-items-center">
-          <a href="#" class="nav-link cart-link">
-            <i class="fa-solid fa-cart-shopping"></i> <span id="cart-count">0.00</span>$
-          </a>
+         <a href="#" class="nav-link cart-link d-flex align-items-center">
+  <i class="fa-solid fa-cart-shopping me-1"></i>
+  <span class="cart-price">
+    <span id="cart-count">0.00</span><span class="currency">$</span>
+  </span>
+</a>
+
           <button id="reset-cart" class="btn btn-reset ms-2">✖</button>
         </div>
       </div>
