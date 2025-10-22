@@ -125,6 +125,24 @@
     }
   }
 
+  @media (max-width: 400px) {
+  .navbar.custom-navbar {
+    .theme-switch-wrapper {
+      margin-left: 0 !important;
+      margin-right: 1.5rem;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .cart-container {
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+
   /* DARK MODE pentru meniul mobil */
   body.dark-mode .navbar.custom-navbar .navbar-collapse {
     background-color: $dark-primary !important;
@@ -183,7 +201,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 1rem;
+  gap: 1rem;
   position: relative;
 }
 

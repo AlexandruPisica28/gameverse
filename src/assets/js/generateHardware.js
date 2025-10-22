@@ -1,11 +1,11 @@
-// === Funcție care actualizează suma totală din coș ===
+// Funcție care actualizează suma totală din coș
 function updateCartTotal() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const total = cart.reduce((sum, item) => sum + item.price, 0);
   document.getElementById('cart-count').textContent = total.toFixed(2);
 }
 
-// === Fetch produse ===
+// Fetch produse 
 fetch('http://localhost:4000/hardware')
   .then(res => res.json())
   .then(data => {
@@ -35,7 +35,7 @@ fetch('http://localhost:4000/hardware')
       container.appendChild(card);
     });
 
-    // === Butoane "Adaugă în coș" ===
+    // Butoane "Adaugă în coș" 
     const addButtons = document.querySelectorAll('.add-to-cart');
     addButtons.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -58,7 +58,7 @@ fetch('http://localhost:4000/hardware')
       });
     });
 
-    // === Butoane "Vezi detalii" ===
+    // Butoane "Vezi detalii" 
 const detailButtons = document.querySelectorAll('.see-details');
 detailButtons.forEach(btn => {
   btn.addEventListener('click', (e) => {
@@ -71,12 +71,12 @@ detailButtons.forEach(btn => {
 });
 
 
-    // === Afișăm totalul la încărcarea paginii ===
+    //  Afișăm totalul la încărcarea paginii 
     updateCartTotal();
 
-    // ===============================
-// 🛒 Cart System with LocalStorage
-// ===============================
+  
+//  Cart System cu LocalStorage
+
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 updateCartDisplay();

@@ -5,26 +5,15 @@ import "/src/assets/scss/main.scss";
 import "./generateProduct.js";
 import "./generateHardware.js";
 
-import { displayProducts } from "./generateProduct.js";
+import { displayProducts, addProduct, updateProduct, deleteProduct, patchProduct } from "./generateProduct.js";
 import "./validate.js";
 
 
 (function() {
   "use strict";
 
-// ========================
-// NAVBAR COLLAPSE ON RESIZE
-// ========================
-//   window.addEventListener("resize", () => {
-//   const navbarCollapse = document.querySelector(".navbar-collapse");
-//   if (window.innerWidth > 991 && navbarCollapse.classList.contains("show")) {
-//     new bootstrap.Collapse(navbarCollapse).hide();
-//   }
-// });
 
-// ========================
-// NAVBAR COLLAPSE ON LINK CLICK
-// ========================
+// NAVBAR COLLPASE ON CLICK
 const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
 const navbarCollapse = document.querySelector('.navbar-collapse');
 
@@ -35,9 +24,8 @@ navLinks.forEach(link => {
   });
 });
 
-// ========================
+
 // CLOSE MENU BUTTON
-// ========================
 const closeMenuBtn = document.querySelector('.btn-close-menu');
 if (closeMenuBtn && navbarCollapse) {
   closeMenuBtn.addEventListener('click', () => {
@@ -48,11 +36,8 @@ if (closeMenuBtn && navbarCollapse) {
 
 
 
-// ========================
-// PRODUCTS JS
-// ========================
 
-
+// FETCH PRODUCTS DIN JSON-SERVER
 async function fetchProducts() {
   try {
     const response = await fetch("http://localhost:4000/products");
@@ -66,10 +51,7 @@ async function fetchProducts() {
 fetchProducts();
 
 
-
-// ========================
 // SCROLL MAI FIN
-// ========================
 const select = (el, all = false) => {
   el = el.trim();
   if (all) {
@@ -85,10 +67,7 @@ const onscroll = (el, listener) => {
 
 
 
-// ========================
-// Navbar active links
-// ========================
-
+// Navbar active links on scroll
  let navbarlinks = select('.custom-links .nav-link', true);
 
 const navbarlinksActive = () => {
@@ -124,10 +103,7 @@ navbarlinks.forEach(navbarlink => {
 
 
 
-// ========================
 // Dark mode toggle
-// ========================
-
 const toggleButton = document.getElementById('theme-toggle');
 const body = document.body;
 
@@ -152,4 +128,33 @@ toggleButton.addEventListener('change', () => {
 })()
 
 
+
+
+// DELETE
+// deleteProduct("817f");
+// deleteProduct("d483");
+
+// POST
+// addProduct({
+//   title: "Noul Produs",
+//   price: 199.99,
+//   image: "https://example.com/nou_produs.jpg",
+//   description: "Descrierea noului produs."
+// });
+
+// PUT
+// updateProduct("817f", {
+//   title: "Produs Actualizat",
+//   price: 149.99,
+//   image: "https://example.com/produs_actualizat.jpg",
+//   description: "Descrierea produsului actualizat."
+// });
+
+// PATCH
+// patchProduct("d483", {
+//   price: 129.99
+// });
+
+// GET
+// getProducts().then(products => console.log(products));
 

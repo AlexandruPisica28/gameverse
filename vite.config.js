@@ -6,7 +6,6 @@ import ejs from "ejs";
 import fs from "fs-extra";
 
 const head = ejs.render(fs.readFileSync("./src/assets/templates/head.html", "utf8"));
-const topbar = ejs.render(fs.readFileSync("./src/assets/templates/topbar.html", "utf8"));
 const hero = ejs.render(fs.readFileSync("./src/assets/templates/hero.html", "utf8"));
 const header = ejs.render(fs.readFileSync("./src/assets/templates/header.html", "utf8"));
 const footer = ejs.render(fs.readFileSync("./src/assets/templates/footer.html", "utf8"));
@@ -23,7 +22,6 @@ export default defineConfig({
             inject: {
                 data: {
                     head: head,
-                    topbar: topbar,
                     hero: hero,
                     contact: contact,
                     header: header,

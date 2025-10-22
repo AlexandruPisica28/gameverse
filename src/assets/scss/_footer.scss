@@ -48,7 +48,7 @@
       transition: 0.3s ease;
 
       &:hover {
-        background-color: $secondary;
+        background-color: $dark-primary;
       }
     }
 
@@ -136,7 +136,7 @@
         color: $dark-text;
 
         &:hover {
-          background-color: $dark-primary;
+          background-color: $primary;
         }
       }
     }

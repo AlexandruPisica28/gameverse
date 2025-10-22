@@ -14,6 +14,7 @@ async function addProduct(product) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(product)
   });
+  return res.json();
 }
 
 // PUT
@@ -23,6 +24,7 @@ async function updateProduct(id, newData) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(newData)
   });
+  return res.json();
 }
 
 // PATCH
@@ -32,6 +34,7 @@ async function patchProduct(id, data) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
+  return res.json();
 }
 
 // DELETE
@@ -40,7 +43,7 @@ async function deleteProduct(id) {
 }
 
 function displayProducts(products) {
-  const productsContainer = document.getElementById("products-container"); // ✅ adaugă această linie
+  const productsContainer = document.getElementById("products-container");
   if (!productsContainer) {
     console.warn("Containerul 'products-container' nu există în pagină.");
     return;
@@ -85,3 +88,7 @@ function displayProducts(products) {
 }
 
 export { getProducts, addProduct, updateProduct, patchProduct, deleteProduct, displayProducts };
+
+
+
+

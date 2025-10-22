@@ -97,12 +97,6 @@
       "image": "https://media.rawg.io/media/games/73e/73eecb8909e0c39fb246f457b5d6cbbe.jpg"
     },
     {
-      "id": "11859",
-      "title": "Team Fortress 2",
-      "price": "9.99",
-      "image": "https://media.rawg.io/media/games/46d/46d98e6910fbc0706e2948a7cc9b10c5.jpg"
-    },
-    {
       "id": "2454",
       "title": "DOOM (2016)",
       "price": "14.99",
@@ -121,10 +115,10 @@
       "image": "https://media.rawg.io/media/games/f46/f466571d536f2e3ea9e815ad17177501.jpg"
     },
     {
-      "id": "4459",
       "title": "Grand Theft Auto IV",
-      "price": "14.99",
-      "image": "https://media.rawg.io/media/games/4a0/4a0a1316102366260e6f38fd2a9cfdce.jpg"
+      "price": "19.99",
+      "image": "https://media.rawg.io/media/games/4a0/4a0a1316102366260e6f38fd2a9cfdce.jpg",
+      "id": "4459"
     },
     {
       "id": "3272",
@@ -191,6 +185,12 @@
       "title": "Bully: Scholarship Edition",
       "price": 29.99,
       "image": "https://store-images.s-microsoft.com/image/apps.22912.66873235889732843.685adf61-8959-427d-8c3e-e4a5ef4bf7f5.430d3a55-1a75-4b7a-8bd0-021b167285a1?q=90&w=480&h=270"
+    },
+    {
+      "id": "5c8a",
+      "title": "Dark Souls Remastered",
+      "price": "299.99",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGt5hBG97fiTnIjH9cV10BLBSdGsdoIAPswg&s"
     }
   ],
   "hardware": [
@@ -318,6 +318,30 @@
       "title": "Casti Gaming Hoco W107",
       "price": "299.99",
       "image": "data:image/jpeg;base64,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"
+    },
+    {
+      "title": "Controller Wireless PlayStation DualSense (PS5) DualSense",
+      "price": 78.99,
+      "image": "https://lcdn.altex.ro/media/catalog/product/C/o/Controller-Wireless-PlayStation-DualSense-3D-Coperta.jpg",
+      "id": "0895"
+    },
+    {
+      "id": "b3fa",
+      "title": "HDD Seagate Barracuda 1TB",
+      "price": "30.00",
+      "image": "https://s13emagst.akamaized.net/products/4/3185/images/img181025_09062011124614.jpg?width=720&height=720&hash=4CBE39BA4C18E06FC3035DD216642080"
+    },
+    {
+      "id": "923e",
+      "title": "Laptop Gaming ASUS TUF Gaming A15",
+      "price": "1149",
+      "image": "https://s13emagst.akamaized.net/products/58384/58383716/images/res_83f7c23087b6f133710090cda0fedce7.jpg?width=720&height=720&hash=9439C0517AC700E7B94E0C74CFFF3DC1"
+    },
+    {
+      "id": "b0d5",
+      "title": "Volan Hori Racing Wheel Apex",
+      "price": "125",
+      "image": "https://s13emagst.akamaized.net/products/46124/46123085/images/res_204d4b99ef9f0d0ccace5c73417f0e3d.jpg?width=720&height=720&hash=2632E538DE3A8A96D3AAA8D365F52030"
     }
   ]
 }
