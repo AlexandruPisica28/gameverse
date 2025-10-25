@@ -1,6 +1,6 @@
 @use "variables" as *;
 
-/* === HERO SECTION === */
+/* HERO SECTION */
 #hero {
   width: 100%;
   min-height: 100vh;
@@ -16,7 +16,6 @@
   color: $dark-text;
   font-family: $font2;
   padding: 4rem 1rem; 
-
   div {
     max-width: 1000px;
     padding: 1rem;
@@ -54,7 +53,7 @@
   }
 }
 
-/* === RESPONSIVE === */
+/* RESPONSIVE */
 @media (max-width: 991px) {
   #hero {
     padding: 3rem 1rem;
@@ -95,7 +94,7 @@
   }
 }
 
-/* === DARK MODE === */
+/* DARK MODE */
 .dark-mode {
   #hero {
     color: $dark-text;

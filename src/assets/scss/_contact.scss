@@ -17,7 +17,7 @@
     color: $text;
   }
 
-  /* === FORM === */
+  /* FORM  */
   .contact-form {
     background-color: $bg;
     border-radius: 12px;
@@ -63,7 +63,7 @@
     }
   }
 
-  /* === INFO BOX === */
+  /*  INFO BOX  */
   .contact-info {
     background-color: $bg;
     border-radius: 12px;
@@ -87,7 +87,7 @@
       color: $primary;
     }
 
-    /* === Social icons === */
+    /* Social icons  */
     .social-icons {
       margin-top: 1rem;
 
@@ -122,7 +122,7 @@
   }
 }
 
-/* === DARK MODE === */
+/* DARK MODE  */
 .dark-mode {
   .contact-section {
     background-color: $dark-bg;

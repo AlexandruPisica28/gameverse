@@ -1,13 +1,13 @@
 @use 'variables' as *;
 
-// ==========================
-// 🎮 PRODUCTS SECTION
-// ==========================
+
+// PRODUCTS SECTION
+
 .products-section {
   .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: center;
     gap: 1.5rem;
   }
 
@@ -71,9 +71,9 @@
   }
 }
 
-// ==========================
-// 🌙 DARK MODE — PRODUCTS
-// ==========================
+
+//  DARK MODE PRODUCTS
+
 .dark-mode {
   .product-card {
     background-color: $dark-card;
@@ -100,9 +100,9 @@
   }
 }
 
-// ==========================
-// 🛒 CART SECTION
-// ==========================
+
+// CART SECTION
+
 .cart-container {
   display: flex;
   align-items: center;
@@ -156,9 +156,9 @@
   }
 }
 
-// ==========================
-// 🌙 DARK MODE — CART
-// ==========================
+
+// DARK MODE CART
+
 .dark-mode {
   .cart-container {
     .cart-link {

@@ -11,8 +11,8 @@
   .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; // centrează toate coloanele pe orizontală
-    gap: 1.5rem; // păstrează distanța între carduri
+    justify-content: center; 
+    gap: 1.5rem; 
   }
 
   .product-card {
@@ -44,18 +44,18 @@
       font-size: 1.2rem;
       color: $text;
       margin: 10px 0 5px 0;
-      text-align: center; // centrează textul titlului
+      text-align: center; 
     }
 
     .product-price {
       color: $primary;
       font-weight: bold;
       margin-bottom: 10px;
-      text-align: center; // centrează prețul
+      text-align: center; 
     }
 
     .custom-btn {
-      margin: 0 auto 15px auto; // centrează butonul
+      margin: 0 auto 15px auto; 
       display: block;
       font-family: $font1;
     }
@@ -65,6 +65,6 @@
   .col-md-4,
   .col-lg-3 {
     display: flex;
-    justify-content: center; // centrează fiecare card în coloană
+    justify-content: center;
   }
 }

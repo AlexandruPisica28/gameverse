@@ -1,6 +1,6 @@
 @use "variables" as *;
 
-/* === NAVBAR GENERAL === */
+/* NAVBAR GENERAL*/
 .navbar.custom-navbar {
   background: $secondary;
   font-family: $font1;
@@ -75,7 +75,7 @@
     }
   }
 
-  /* === DARK MODE === */
+  /* DARK MODE */
   &.dark-mode,
   body.dark-mode & {
     background-color: $dark-primary;
@@ -101,7 +101,7 @@
   }
 }
 
-/* === RESPONSIVE === */
+/* RESPONSIVE  */
 @media (max-width: 991px) {
   .navbar.custom-navbar {
     .navbar-collapse {
@@ -189,14 +189,13 @@
     color: #fff;
   }
 
-  /* Ascunde pe desktop */
   @media (min-width: 992px) {
     display: none !important;
   }
 }
 
 
-/* === MODERN DARK MODE SWITCH === */
+/* MODERN DARK MODE SWITCH */
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
@@ -251,7 +250,7 @@
   }
 }
 
-/* === Activare (Dark Mode ON) === */
+/* Activare (Dark Mode ON) */
 .theme-switch:checked + .switch-label {
   background-color: $primary;
 
@@ -277,7 +276,7 @@
   }
 }
 
-/* === Fix penru cos === */
+/* Fix penru cos */
 #cart-count {
   display: inline-block;
   width: 4rem; 

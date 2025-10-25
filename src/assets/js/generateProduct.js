@@ -73,7 +73,10 @@ function displayProducts(products) {
     `;
 
     productsContainer.appendChild(card);
+    
   });
+
+  
 
   // Event pentru butonul Vezi Detalii
   const detailButtons = document.querySelectorAll('.see-details');

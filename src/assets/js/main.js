@@ -1,3 +1,4 @@
+// IMPORTURI
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as bootstrap from "bootstrap";
 
@@ -5,127 +6,107 @@ import "/src/assets/scss/main.scss";
 import "./generateProduct.js";
 import "./generateHardware.js";
 
-import { displayProducts, addProduct, updateProduct, deleteProduct, patchProduct } from "./generateProduct.js";
+import { displayProducts } from "./generateProduct.js";
 import "./validate.js";
-
 
 (function() {
   "use strict";
 
 
-// NAVBAR COLLPASE ON CLICK
-const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
-const navbarCollapse = document.querySelector('.navbar-collapse');
+  // NAVBAR: închidere automată la click pe link in responsive  
+  const navbarCollapse = document.querySelector('.navbar-collapse');
+  const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
 
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
-    bsCollapse.hide();
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+      bsCollapse.hide();
+    });
   });
-});
 
-
-// CLOSE MENU BUTTON
-const closeMenuBtn = document.querySelector('.btn-close-menu');
-if (closeMenuBtn && navbarCollapse) {
-  closeMenuBtn.addEventListener('click', () => {
-    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
-    bsCollapse.hide();
-  });
-}
-
-
-
-
-// FETCH PRODUCTS DIN JSON-SERVER
-async function fetchProducts() {
-  try {
-    const response = await fetch("http://localhost:4000/products");
-    const products = await response.json();
-    displayProducts(products);
-  } catch (error) {
-    console.error("Eroare la încărcarea produselor:", error);
+  
+  // NAVBAR BUTTON CLOSE
+  const closeMenuBtn = document.querySelector('.btn-close-menu');
+  if (closeMenuBtn && navbarCollapse) {
+    closeMenuBtn.addEventListener('click', () => {
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+      bsCollapse.hide();
+    });
   }
 
-}
-fetchProducts();
-
-
-// SCROLL MAI FIN
-const select = (el, all = false) => {
-  el = el.trim();
-  if (all) {
-    return [...document.querySelectorAll(el)];
-  } else {
-    return document.querySelector(el);
+ 
+  // FETCH PRODUCTS
+  async function fetchProducts() {
+    try {
+      const response = await fetch("http://localhost:4000/products");
+      if (!response.ok) throw new Error("Eroare la fetch");
+      const products = await response.json();
+      displayProducts(products);
+    } catch (error) {
+      console.error("Eroare la încărcarea produselor:", error);
+    }
   }
-};
 
-const onscroll = (el, listener) => {
-  el.addEventListener('scroll', listener);
-};
+  fetchProducts();
 
 
+  // SCROLL ACTIVE NAVBAR
+  const navbarLinks = document.querySelectorAll('.custom-links .nav-link');
 
-// Navbar active links on scroll
- let navbarlinks = select('.custom-links .nav-link', true);
+  const navbarlinksActive = () => {
+    const position = window.scrollY + 200; 
+    navbarLinks.forEach(navbarlink => {
+      if (!navbarlink.hash) return;
+      const section = document.querySelector(navbarlink.hash);
+      if (!section) return;
+      if (position >= section.offsetTop && position < (section.offsetTop + section.offsetHeight)) {
+        navbarlink.classList.add('active');
+      } else {
+        navbarlink.classList.remove('active');
+      }
+    });
+  };
 
-const navbarlinksActive = () => {
-  let position = window.scrollY + 200; 
-  navbarlinks.forEach(navbarlink => {
+  
+  window.addEventListener('scroll', navbarlinksActive, { passive: true });
+  window.addEventListener('load', navbarlinksActive);
+
+
+  navbarLinks.forEach(navbarlink => {
     if (!navbarlink.hash) return;
-    let section = select(navbarlink.hash);
-    if (!section) return;
-    if (position >= section.offsetTop && position < (section.offsetTop + section.offsetHeight)) {
-      navbarlink.classList.add('active');
-    } else {
-      navbarlink.classList.remove('active');
-    }
+    navbarlink.addEventListener('click', e => {
+      e.preventDefault();
+      const section = document.querySelector(navbarlink.hash);
+      if (section) {
+        window.scrollTo({
+          top: section.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
   });
-};
 
-window.addEventListener('load', navbarlinksActive);
-onscroll(document, navbarlinksActive);
+  // DARK MODE
+  
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
 
-navbarlinks.forEach(navbarlink => {
-  if (!navbarlink.hash) return;
-  navbarlink.addEventListener('click', e => {
-    e.preventDefault();
-    let section = select(navbarlink.hash);
-    if (section) {
-      window.scrollTo({
-        top: section.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-  });
-});
-
-
-
-// Dark mode toggle
-const toggleButton = document.getElementById('theme-toggle');
-const body = document.body;
-
-if (localStorage.getItem('theme') === 'dark') {
-  body.classList.add('dark-mode');
-  toggleButton.checked = true; 
-} 
-
-
-toggleButton.addEventListener('change', () => {
-  body.classList.toggle('dark-mode');
-
-  if (body.classList.contains('dark-mode')) {
-    localStorage.setItem('theme', 'dark');
-  } else {
-    localStorage.setItem('theme', 'light');
+  
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+    toggleButton.checked = true;
   }
-});
 
+  toggleButton.addEventListener('change', () => {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) { 
+      localStorage.setItem('theme', 'dark');
+    } else {
+       localStorage.setItem('theme', 'light'); 
+      } 
+    });
 
-
-})()
+})();
 
 
 
@@ -157,4 +138,8 @@ toggleButton.addEventListener('change', () => {
 
 // GET
 // getProducts().then(products => console.log(products));
+
+// patchProduct("5c8a", {
+//   price: 
+// });
 

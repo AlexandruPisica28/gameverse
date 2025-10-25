@@ -21,7 +21,7 @@
     color: $primary;
   }
 
-  /* === Newsletter === */
+  /* Newsletter */
   .footer-newsletter {
     background-color: $secondary; 
     text-align: center;
@@ -58,7 +58,7 @@
     }
   }
 
-  /* === Top section === */
+  /* Top section  */
   .footer-top {
     padding: 3rem 0;
 
@@ -94,7 +94,7 @@
     }
   }
 
-  /* === Copyright === */
+  /*  Copyright  */
   .copyright {
     text-align: center;
     font-size: 0.9rem;
@@ -104,7 +104,7 @@
   }
 }
 
-/* === DARK MODE === */
+/* DARK MODE  */
 .dark-mode {
   .custom-footer {
     background-color: $dark-bg;

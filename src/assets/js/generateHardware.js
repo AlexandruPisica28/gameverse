@@ -70,8 +70,7 @@ detailButtons.forEach(btn => {
   }, { once: true }); 
 });
 
-
-    //  Afișăm totalul la încărcarea paginii 
+ 
     updateCartTotal();
 
   
@@ -81,7 +80,6 @@ detailButtons.forEach(btn => {
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 updateCartDisplay();
 
-// Event delegation for "Adaugă în coș" buttons
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('add-to-cart')) {
     e.preventDefault();
