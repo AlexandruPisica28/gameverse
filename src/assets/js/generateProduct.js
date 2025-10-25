@@ -90,6 +90,17 @@ function displayProducts(products) {
   });
 }
 
+// Alert pentru adauga in cos
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.addEventListener('click', (e) => {
+    if (e.target.classList.contains('add-to-cart')) {
+      e.preventDefault();
+      const title = e.target.getAttribute('data-title');
+      alert(`Produsul "${title}" a fost adăugat în coș!`);
+    }
+  });
+});
+
 export { getProducts, addProduct, updateProduct, patchProduct, deleteProduct, displayProducts };
 
 
