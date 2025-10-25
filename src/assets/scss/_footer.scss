@@ -29,12 +29,14 @@
 
     input[type="email"] {
       padding: 0.6rem 1rem;
-      border: none;
+      border: 1px solid transparent;
+      box-sizing: border-box;
       border-radius: 4px;
       margin-right: 0.5rem;
       width: 60%;
       max-width: 300px;
       font-family: $font1;
+      transition: border-color 0.3s ease; 
     }
 
     input[type="submit"] {
@@ -128,7 +130,7 @@
       input[type="email"] {
         background-color: $dark-bg;
         color: $dark-text;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.1);
       }
 
       input[type="submit"] {
